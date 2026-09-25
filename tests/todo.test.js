@@ -31,3 +31,20 @@ test('saveTodo adds a todo', () => {
 
   assert.strictEqual(todos.length, 1);
 });
+
+test('createPremiumSubscription creates an active premium subscription', () => {
+  const { createPremiumSubscription } = require('../src/todo');
+
+  const subscription = createPremiumSubscription({
+    email: 'user@example.com'
+  });
+
+  assert.strictEqual(subscription.plan, 'premium');
+  assert.strictEqual(subscription.active, true);
+});
+
+test('createPremiumSubscription rejects missing user', () => {
+  const { createPremiumSubscription } = require('../src/todo');
+
+  assert.throws(() => createPremiumSubscription(null));
+});
