@@ -30,3 +30,13 @@ module.exports = {
   createTodo,
   saveTodo
 };
+
+function searchTodos(todos, searchTerm) {
+  const term = searchTerm.toLowerCase();
+
+  return todos.filter(todo =>
+    todo.title.toLowerCase().includes(term)
+  );
+}
+
+module.exports.searchTodos = searchTodos;
