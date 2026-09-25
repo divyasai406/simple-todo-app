@@ -1,0 +1,9 @@
+{
+  "name": "simple-todo-app",
+  "version": "1.0.0",
+  "description": "Simple Todo App for code review testing",
+  "main": "src/todo.js",
+  "scripts": {
+    "test": "node --test"
+  }
+}
