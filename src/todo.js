@@ -30,3 +30,18 @@ module.exports = {
   createTodo,
   saveTodo
 };
+
+function createPremiumSubscription(user, plan = 'premium') {
+  if (!user || !user.email) {
+    throw new Error('User is required');
+  }
+
+  return {
+    userEmail: user.email,
+    plan,
+    active: true,
+    startedAt: new Date().toISOString()
+  };
+}
+
+module.exports.createPremiumSubscription = createPremiumSubscription;
